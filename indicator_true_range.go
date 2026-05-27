@@ -10,21 +10,11 @@ type trueRangeIndicator struct {
 // which calculates the true range at the current point in time for a series
 // https://www.investopedia.com/terms/a/atr.asp
 func NewTrueRangeIndicator(series *TimeSeries) Indicator {
-	return trueRangeIndicator{
-		series: series,
-	}
+	_ = "STUB: not implemented"
+	return *new(Indicator)
 }
 
 func (tri trueRangeIndicator) Calculate(index int) big.Decimal {
-	if index-1 < 0 {
-		return big.ZERO
-	}
-
-	candle := tri.series.Candles[index]
-	previousClose := tri.series.Candles[index-1].ClosePrice
-
-	trueHigh := big.MaxSlice(candle.MaxPrice, previousClose)
-	trueLow := big.MinSlice(candle.MinPrice, previousClose)
-
-	return trueHigh.Sub(trueLow)
+	_ = "STUB: not implemented"
+	return *new(big.Decimal)
 }

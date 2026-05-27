@@ -6,10 +6,8 @@ import "github.com/sdcoffey/big"
 // present in a given window. Use a window value of -1 to include all values in the
 // underlying indicator.
 func NewMaximumValueIndicator(ind Indicator, window int) Indicator {
-	return maximumValueIndicator{
-		indicator: ind,
-		window:    window,
-	}
+	_ = "STUB: not implemented"
+	return *new(Indicator)
 }
 
 type maximumValueIndicator struct {
@@ -18,19 +16,6 @@ type maximumValueIndicator struct {
 }
 
 func (mvi maximumValueIndicator) Calculate(index int) big.Decimal {
-	maxValue := big.NewFromString("-Inf")
-
-	start := 0
-	if mvi.window > 0 {
-		start = Max(index-mvi.window+1, 0)
-	}
-
-	for i := start; i <= index; i++ {
-		value := mvi.indicator.Calculate(i)
-		if value.GT(maxValue) {
-			maxValue = value
-		}
-	}
-
-	return maxValue
+	_ = "STUB: not implemented"
+	return *new(big.Decimal)
 }

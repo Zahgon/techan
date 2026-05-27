@@ -9,10 +9,8 @@ import "github.com/sdcoffey/big"
 // all values present in the underlying indicator.
 // See: https://www.investopedia.com/terms/m/maximum-drawdown-mdd.asp
 func NewMaximumDrawdownIndicator(ind Indicator, window int) Indicator {
-	return maximumDrawdownIndicator{
-		indicator: ind,
-		window:    window,
-	}
+	_ = "STUB: not implemented"
+	return *new(Indicator)
 }
 
 type maximumDrawdownIndicator struct {
@@ -21,8 +19,6 @@ type maximumDrawdownIndicator struct {
 }
 
 func (mdi maximumDrawdownIndicator) Calculate(index int) big.Decimal {
-	minVal := NewMinimumValueIndicator(mdi.indicator, mdi.window).Calculate(index)
-	maxVal := NewMaximumValueIndicator(mdi.indicator, mdi.window).Calculate(index)
-
-	return (minVal.Sub(maxVal)).Div(maxVal)
+	_ = "STUB: not implemented"
+	return *new(big.Decimal)
 }

@@ -11,22 +11,11 @@ type averageTrueRangeIndicator struct {
 // underlying over a window
 // https://www.investopedia.com/terms/a/atr.asp
 func NewAverageTrueRangeIndicator(series *TimeSeries, window int) Indicator {
-	return averageTrueRangeIndicator{
-		series: series,
-		window: window,
-	}
+	_ = "STUB: not implemented"
+	return *new(Indicator)
 }
 
 func (atr averageTrueRangeIndicator) Calculate(index int) big.Decimal {
-	if index < atr.window {
-		return big.ZERO
-	}
-
-	sum := big.ZERO
-
-	for i := index; i > index-atr.window; i-- {
-		sum = sum.Add(NewTrueRangeIndicator(atr.series).Calculate(i))
-	}
-
-	return sum.Div(big.NewFromInt(atr.window))
+	_ = "STUB: not implemented"
+	return *new(big.Decimal)
 }

@@ -8,11 +8,13 @@ type volumeIndicator struct {
 
 // NewVolumeIndicator returns an indicator which returns the volume of a candle for a given index
 func NewVolumeIndicator(series *TimeSeries) Indicator {
-	return volumeIndicator{series}
+	_ = "STUB: not implemented"
+	return *new(Indicator)
 }
 
 func (vi volumeIndicator) Calculate(index int) big.Decimal {
-	return vi.Candles[index].Volume
+	_ = "STUB: not implemented"
+	return *new(big.Decimal)
 }
 
 type closePriceIndicator struct {
@@ -21,11 +23,13 @@ type closePriceIndicator struct {
 
 // NewClosePriceIndicator returns an Indicator which returns the close price of a candle for a given index
 func NewClosePriceIndicator(series *TimeSeries) Indicator {
-	return closePriceIndicator{series}
+	_ = "STUB: not implemented"
+	return *new(Indicator)
 }
 
 func (cpi closePriceIndicator) Calculate(index int) big.Decimal {
-	return cpi.Candles[index].ClosePrice
+	_ = "STUB: not implemented"
+	return *new(big.Decimal)
 }
 
 type highPriceIndicator struct {
@@ -34,13 +38,13 @@ type highPriceIndicator struct {
 
 // NewHighPriceIndicator returns an Indicator which returns the high price of a candle for a given index
 func NewHighPriceIndicator(series *TimeSeries) Indicator {
-	return highPriceIndicator{
-		series,
-	}
+	_ = "STUB: not implemented"
+	return *new(Indicator)
 }
 
 func (hpi highPriceIndicator) Calculate(index int) big.Decimal {
-	return hpi.Candles[index].MaxPrice
+	_ = "STUB: not implemented"
+	return *new(big.Decimal)
 }
 
 type lowPriceIndicator struct {
@@ -49,13 +53,13 @@ type lowPriceIndicator struct {
 
 // NewLowPriceIndicator returns an Indicator which returns the low price of a candle for a given index
 func NewLowPriceIndicator(series *TimeSeries) Indicator {
-	return lowPriceIndicator{
-		series,
-	}
+	_ = "STUB: not implemented"
+	return *new(Indicator)
 }
 
 func (lpi lowPriceIndicator) Calculate(index int) big.Decimal {
-	return lpi.Candles[index].MinPrice
+	_ = "STUB: not implemented"
+	return *new(big.Decimal)
 }
 
 type openPriceIndicator struct {
@@ -64,13 +68,13 @@ type openPriceIndicator struct {
 
 // NewOpenPriceIndicator returns an Indicator which returns the open price of a candle for a given index
 func NewOpenPriceIndicator(series *TimeSeries) Indicator {
-	return openPriceIndicator{
-		series,
-	}
+	_ = "STUB: not implemented"
+	return *new(Indicator)
 }
 
 func (opi openPriceIndicator) Calculate(index int) big.Decimal {
-	return opi.Candles[index].OpenPrice
+	_ = "STUB: not implemented"
+	return *new(big.Decimal)
 }
 
 type typicalPriceIndicator struct {
@@ -80,10 +84,11 @@ type typicalPriceIndicator struct {
 // NewTypicalPriceIndicator returns an Indicator which returns the typical price of a candle for a given index.
 // The typical price is an average of the high, low, and close prices for a given candle.
 func NewTypicalPriceIndicator(series *TimeSeries) Indicator {
-	return typicalPriceIndicator{series}
+	_ = "STUB: not implemented"
+	return *new(Indicator)
 }
 
 func (tpi typicalPriceIndicator) Calculate(index int) big.Decimal {
-	numerator := tpi.Candles[index].MaxPrice.Add(tpi.Candles[index].MinPrice).Add(tpi.Candles[index].ClosePrice)
-	return numerator.Div(big.NewFromString("3"))
+	_ = "STUB: not implemented"
+	return *new(big.Decimal)
 }

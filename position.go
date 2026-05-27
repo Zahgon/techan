@@ -8,71 +8,45 @@ type Position struct {
 }
 
 // NewPosition returns a new Position with the passed-in order as the open order
-func NewPosition(openOrder Order) (t *Position) {
-	t = new(Position)
-	t.orders[0] = &openOrder
-
-	return t
-}
+func NewPosition(openOrder Order) (t *Position) { _ = "STUB: not implemented"; return nil }
 
 // Enter sets the open order to the order passed in
-func (p *Position) Enter(order Order) {
-	p.orders[0] = &order
-}
+func (p *Position) Enter(order Order) { _ = "STUB: not implemented"; return }
 
 // Exit sets the exit order to the order passed in
-func (p *Position) Exit(order Order) {
-	p.orders[1] = &order
-}
+func (p *Position) Exit(order Order) { _ = "STUB: not implemented"; return }
 
 // IsLong returns true if the entrance order is a buy order
-func (p *Position) IsLong() bool {
-	return p.EntranceOrder() != nil && p.EntranceOrder().Side == BUY
-}
+func (p *Position) IsLong() bool { _ = "STUB: not implemented"; return false }
 
 // IsShort returns true if the entrance order is a sell order
-func (p *Position) IsShort() bool {
-	return p.EntranceOrder() != nil && p.EntranceOrder().Side == SELL
-}
+func (p *Position) IsShort() bool { _ = "STUB: not implemented"; return false }
 
 // IsOpen returns true if there is an entrance order but no exit order
-func (p *Position) IsOpen() bool {
-	return p.EntranceOrder() != nil && p.ExitOrder() == nil
-}
+func (p *Position) IsOpen() bool { _ = "STUB: not implemented"; return false }
 
 // IsClosed returns true of there are both entrance and exit orders
-func (p *Position) IsClosed() bool {
-	return p.EntranceOrder() != nil && p.ExitOrder() != nil
-}
+func (p *Position) IsClosed() bool { _ = "STUB: not implemented"; return false }
 
 // IsNew returns true if there is neither an entrance or exit order
-func (p *Position) IsNew() bool {
-	return p.EntranceOrder() == nil && p.ExitOrder() == nil
-}
+func (p *Position) IsNew() bool { _ = "STUB: not implemented"; return false }
 
 // EntranceOrder returns the entrance order of this position
 func (p *Position) EntranceOrder() *Order {
-	return p.orders[0]
+	_ = "STUB: not implemented"
+
+	// ExitOrder returns the exit order of this position
+	return nil
 }
 
-// ExitOrder returns the exit order of this position
 func (p *Position) ExitOrder() *Order {
-	return p.orders[1]
+	_ = "STUB: not implemented"
+
+	// CostBasis returns the price to enter this order
+	return nil
 }
 
-// CostBasis returns the price to enter this order
-func (p *Position) CostBasis() big.Decimal {
-	if p.EntranceOrder() != nil {
-		return p.EntranceOrder().Amount.Mul(p.EntranceOrder().Price)
-	}
-	return big.ZERO
-}
+func (p *Position) CostBasis() big.Decimal { _ = "STUB: not implemented"; return *new(big.Decimal) }
 
 // ExitValue returns the value accrued by closing the position
-func (p *Position) ExitValue() big.Decimal {
-	if p.IsClosed() {
-		return p.ExitOrder().Amount.Mul(p.ExitOrder().Price)
-	}
-
-	return big.ZERO
-}
+func (p *Position) ExitValue() big.Decimal { _ = "STUB: not implemented"; return *new(big.Decimal) }

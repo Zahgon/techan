@@ -12,29 +12,16 @@ type keltnerChannelIndicator struct {
 }
 
 func NewKeltnerChannelUpperIndicator(series *TimeSeries, window int) Indicator {
-	return keltnerChannelIndicator{
-		atr:    NewAverageTrueRangeIndicator(series, window),
-		ema:    NewEMAIndicator(NewClosePriceIndicator(series), window),
-		mul:    big.ONE,
-		window: window,
-	}
+	_ = "STUB: not implemented"
+	return *new(Indicator)
 }
 
 func NewKeltnerChannelLowerIndicator(series *TimeSeries, window int) Indicator {
-	return keltnerChannelIndicator{
-		atr:    NewAverageTrueRangeIndicator(series, window),
-		ema:    NewEMAIndicator(NewClosePriceIndicator(series), window),
-		mul:    big.ONE.Neg(),
-		window: window,
-	}
+	_ = "STUB: not implemented"
+	return *new(Indicator)
 }
 
 func (kci keltnerChannelIndicator) Calculate(index int) big.Decimal {
-	if index <= kci.window-1 {
-		return big.ZERO
-	}
-
-	coefficient := big.NewFromInt(2).Mul(kci.mul)
-
-	return kci.ema.Calculate(index).Add(kci.atr.Calculate(index).Mul(coefficient))
+	_ = "STUB: not implemented"
+	return *new(big.Decimal)
 }

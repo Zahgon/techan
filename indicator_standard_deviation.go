@@ -7,9 +7,8 @@ import (
 // NewStandardDeviationIndicator calculates the standard deviation of a base indicator.
 // See https://www.investopedia.com/terms/s/standarddeviation.asp
 func NewStandardDeviationIndicator(ind Indicator) Indicator {
-	return standardDeviationIndicator{
-		indicator: NewVarianceIndicator(ind),
-	}
+	_ = "STUB: not implemented"
+	return *new(Indicator)
 }
 
 type standardDeviationIndicator struct {
@@ -18,5 +17,6 @@ type standardDeviationIndicator struct {
 
 // Calculate returns the standard deviation of a base indicator
 func (sdi standardDeviationIndicator) Calculate(index int) big.Decimal {
-	return sdi.indicator.Calculate(index).Sqrt()
+	_ = "STUB: not implemented"
+	return *new(big.Decimal)
 }

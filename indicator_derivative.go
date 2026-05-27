@@ -11,9 +11,6 @@ type DerivativeIndicator struct {
 
 // Calculate returns the derivative of the underlying indicator. At index 0, it will always return 0.
 func (di DerivativeIndicator) Calculate(index int) big.Decimal {
-	if index == 0 {
-		return big.ZERO
-	}
-
-	return di.Indicator.Calculate(index).Sub(di.Indicator.Calculate(index - 1))
+	_ = "STUB: not implemented"
+	return *new(big.Decimal)
 }

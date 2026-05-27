@@ -6,9 +6,11 @@ type fixedIndicator []float64
 
 // NewFixedIndicator returns an indicator with a fixed set of values that are returned when an index is passed in
 func NewFixedIndicator(vals ...float64) Indicator {
-	return fixedIndicator(vals)
+	_ = "STUB: not implemented"
+	return *new(Indicator)
 }
 
 func (fi fixedIndicator) Calculate(index int) big.Decimal {
-	return big.NewDecimal(fi[index])
+	_ = "STUB: not implemented"
+	return *new(big.Decimal)
 }

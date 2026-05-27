@@ -6,10 +6,8 @@ import "github.com/sdcoffey/big"
 // present in a given window. Use a window value of -1 to include all values in the
 // underlying indicator.
 func NewMinimumValueIndicator(ind Indicator, window int) Indicator {
-	return minimumValueIndicator{
-		indicator: ind,
-		window:    window,
-	}
+	_ = "STUB: not implemented"
+	return *new(Indicator)
 }
 
 type minimumValueIndicator struct {
@@ -18,19 +16,6 @@ type minimumValueIndicator struct {
 }
 
 func (mvi minimumValueIndicator) Calculate(index int) big.Decimal {
-	minValue := big.NewFromString("Inf")
-
-	start := 0
-	if mvi.window > 0 {
-		start = Max(index-mvi.window+1, 0)
-	}
-
-	for i := start; i <= index; i++ {
-		value := mvi.indicator.Calculate(i)
-		if value.LT(minValue) {
-			minValue = value
-		}
-	}
-
-	return minValue
+	_ = "STUB: not implemented"
+	return *new(big.Decimal)
 }
